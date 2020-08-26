@@ -1,0 +1,74 @@
+<head>
+    <title>Xác nhận tài khoản</title>
+    <link rel="stylesheet" type="text/css" href="vendor2/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/manage.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+</head>
+
+
+<%- include('header'); -%>
+
+    <div class="manage">
+        <div class="table-manage">
+            <form action="GET">
+                <div class="wrap-tablemanage">
+                    <h3>Xác nhận tài khoản</h3>
+                    <div class="table">
+                        <div class="row-manage header">
+                            <div class="cell-manage">
+                                Tên đăng nhập
+                            </div>
+                            <div class="cell-manage">
+                                email
+                            </div>
+                            <div class="cell-manage">
+                                CMND
+                            </div>
+                            <div class="cell-manage">
+                                Tình trạng
+                            </div>
+                            <div class="cell-manage">
+                                Acctive
+                            </div>
+                        </div>
+                        <% user.forEach(function (params) { %>
+                            <div class="row-manage">
+                                <div class="cell-manage" data-title="Tên đăng nhập">
+                                    <%= params.username %>
+                                </div>
+                                <div class="cell-manage" data-title="email">
+                                    <%= params.email %>
+                                </div>
+                                <div class="cell-manage" data-title="CMND">
+                                    <%= params.identificationnumber %>
+                                </div>
+                                <div class="cell-manage" data-title=" Tình trạng">
+                                    <%= params.status %>
+                                </div>
+                                <div class="cell-manage" data-title="">
+                                    <a type="button" class="btn btn-primary" href="/account_verify/auth/<%= params.id %>">Xác thực</a>
+                                </div>
+                            </div>
+                            <% }); %>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="vendor2/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor2/animsition/js/animsition.min.js"></script>
+    <script src="vendor2/bootstrap/js/popper.js"></script>
+    <script src="vendor2/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor2/select2/select2.min.js"></script>
+    <script src="vendor2/daterangepicker/moment.min.js"></script>
+    <script src="vendor2/daterangepicker/daterangepicker.js"></script>
+    <script src="vendor2/countdowntime/countdowntime.js"></script>
+    <script src="js/vendor2.js"></script>
+    <%- include('footer'); -%>

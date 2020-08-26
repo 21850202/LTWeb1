@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon-bank.png" type="image/png">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+            </div>
+            <div class="p-4 pt-5">
+                <h1><a href="/" class="logo">Bank</a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="/">Trang chủ</a>
+                    </li>
+                    <% if(!currentUser) { %> 
+                    <li>
+                        <a href="register">Đăng ký</a>
+                    </li>
+                    <li>
+                        <a href="login">Đăng nhập</a>
+                    </li>
+                    <% }else { %> 
+                        <% if (currentUser && currentUser.isStaff == true ){ %> 
+                        <li>
+                            <a href="#account" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản lý admin</a>
+                            <ul class="collapse list-unstyled" id="account">
+                                <li>
+                                    <a href="account_verify">Xác nhận tài khoản</a>
+                                </li>
+                                <li>
+                                    <a href="searchaccount">Quản lý tìm kiếm</a>
+                                </li>
+                                <li>
+                                    <a href="logout">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <% }else { %> 
+                    <li>
+                        <a href="#accountSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Tài khoản</a>
+                        <ul class="collapse list-unstyled" id="accountSubmenu">
+                            <li>
+                                <a href="#account" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản lý</a>
+                                <ul class="collapse list-unstyled" id="account">
+                                    <li>
+                                        <a href="manage">Quản lý tài khoản</a>
+                                    </li>
+                                    <li>
+                                        <a href="transaction">Quản lý giao dịch</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#transfer" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Chuyển tiền</a>
+                                <ul class="collapse list-unstyled" id="transfer">
+                                    <li>
+                                        <a href="transfer">Cùng ngân hàng</a>
+                                    </li>
+                                    <li>
+                                        <a href="transferothers">Liên ngân hàng</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#changepassword" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Thông tin cá nhân</a>
+                                <ul class="collapse list-unstyled" id="changepassword">
+                                    <li>
+                                        <a href="changepassword">Đổi mật khẩu</a>
+                                    </li>
+                                    <li>
+                                        <a href="logout">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#save" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Tài khoản tiết kiệm</a>
+                                <ul class="collapse list-unstyled" id="save">
+                                    <li>
+                                        <a href="save">Mở tài khoản tiết kiệm</a>
+                                    </li>
+                                    <li>
+                                        <a href="AccountSave">Thông tin tài khoản tiết kiệm</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <% } %> 
+                <% } %> 
+                    <li>
+                        <a href="#">Liên hệ</a>
+                    </li>
+                </ul>
+                <div class="mb-5">
+                    <h3 class="h6">Đăng ký thông báo</h3>
+                    <form action="#" class="colorlib-subscribe-form">
+                        <div class="form-group d-flex">
+                            <div class="icon"><span class="icon-paper-plane"></span></div>
+                            <input type="text" class="form-control" placeholder="Nhập email để đăng ký">
+                        </div>
+                    </form>
+                </div>
+                <div class="footer">
+                    <p>
+                        Copyright &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> | Bản quyền thuộc <a href="/">Bank</a>
+                    </p>
+                </div>
+            </div>
+        </nav>

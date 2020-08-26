@@ -1,0 +1,90 @@
+<head>
+    <title>Tìm kiếm tài khoản</title>
+    <link rel="stylesheet" type="text/css" href="vendor2/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<%- include('header'); -%>
+
+    <div class="manage">
+        <div class="table-search">
+            <form action="" method="POST">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="name" placeholder="Tìm kiếm tài khoản" aria-label="Search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <br>
+                <div class="wrap-tablesearch">
+                    <div class="table">
+                        <div class="row-search header">
+                            <div class="cell-search">
+                                Tên đăng nhập
+                            </div>
+                            <div class="cell-search">
+                                Email
+                            </div>
+                            <div class="cell-search">
+                                Họ tên
+                            </div>
+                            <div class="cell-search">
+                                Số tài khoản
+                            </div>
+                            <div class="cell-search">
+                                Số dư tài khoản
+                            </div>
+                            <div class="cell-search">
+                                Tình trạng
+                            </div>
+                            <div class="cell-search">
+                                Nộp tiền
+                            </div>
+                        </div>
+                        <% banks.forEach(function(bank) { %>
+                            <div class="row-search">
+                                <div class="cell-search" data-title="Tên đăng nhập">
+                                    <%= bank.user.username %>
+                                </div>
+                                <div class="cell-search" data-title="email">
+                                    <%= bank.user.email %>
+                                </div>
+                                <div class="cell-search" data-title="email">
+                                    <%= bank.user.displayName %>
+                                </div>
+                                <div class="cell-search" data-title="email">
+                                    <%= bank.accountNumber %>
+                                </div>
+                                <div class="cell-search" data-title="email">
+                                    <%= bank.Money %>
+                                </div>
+                                <div class="cell-search" data-title=" Tình trạng">
+                                    <%= bank.user.status %>
+                                </div>
+                                <div class="cell-search" data-title="Nộp tiền">
+                                    <a type="button" class="btn btn-success" href="payment">Nộp tiền</a>
+                                </div>
+                            </div>
+                            <% }); %>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="vendor2/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor2/animsition/js/animsition.min.js"></script>
+    <script src="vendor2/bootstrap/js/popper.js"></script>
+    <script src="vendor2/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor2/select2/select2.min.js"></script>
+    <script src="vendor2/daterangepicker/moment.min.js"></script>
+    <script src="vendor2/daterangepicker/daterangepicker.js"></script>
+    <script src="vendor2/countdowntime/countdowntime.js"></script>
+    <script src="js/vendor2.js"></script>
+    <%- include('footer'); -%>

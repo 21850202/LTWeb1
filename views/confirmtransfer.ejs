@@ -1,0 +1,55 @@
+<head>
+    <title>Chuyển tiền cùng ngân hàng</title>
+    <link rel="stylesheet" type="text/css" href="vendor2/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/transfer.css">
+</head>
+<%- include('header',{title: 'Đăng ký'}); -%>
+    <div class="limiter">
+        <div class="container-transfer">
+            <div class="transfer-form validate-form">
+                <h3>Thông tin người thụ hưởng</h3>
+                <div class="wrap-input100 validate-input">
+                    <span class="focus-input100"></span>
+                    <span class="label-input100">Ngân hàng thụ hưởng - Bank</span>
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <span class="focus-input100"></span>
+                    <span class="label-input100">Tài khoản thụ hưởng: <%= tra.accountReceiver %></span>
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <span class="focus-input100"></span>
+                    <span class="label-input100">Số tiền: <%= tra.money %></span>
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <span class="focus-input100"></span>
+                    <span class="label-input100">Nội dung: <%= tra.content %></span>
+                </div>
+            <form  action="" method="POST" >
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="code">
+                    <span class="focus-input100"></span>
+                    <span class="label-input100">Mã xác nhận</span>
+                </div>
+                <div class="container-transfer-form-btn">
+                    <button class="transfer-form-btn">Xác nhận</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script src="vendor2/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor2/animsition/js/animsition.min.js"></script>
+    <script src="vendor2/bootstrap/js/popper.js"></script>
+    <script src="vendor2/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor2/select2/select2.min.js"></script>
+    <script src="vendor2/daterangepicker/moment.min.js"></script>
+    <script src="vendor2/daterangepicker/daterangepicker.js"></script>
+    <script src="vendor2/countdowntime/countdowntime.js"></script>
+    <script src="js/vendor2.js"></script>
+    <%- include('footer'); -%>

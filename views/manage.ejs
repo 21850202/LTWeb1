@@ -1,0 +1,71 @@
+<head>
+    <title>Quản lý tài khoản</title>
+    <link rel="stylesheet" type="text/css" href="vendor2/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor2/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/manage.css">
+</head>
+
+
+<%- include('header'); -%>
+
+    <div class="manage">
+        <div class="table-manage">
+            <form action="GET">
+                <div class="wrap-tablemanage">
+                    <h3>Quản Lý Tài Khoản</h3>
+                    <div class="table">
+                        <div class="row-manage header">
+                            <div class="cell-manage">
+                                Số tài khoản
+                            </div>
+                            <div class="cell-manage">
+                                Ngày mở
+                            </div>
+                            <div class="cell-manage">
+                                Số dư
+                            </div>
+                            <div class="cell-manage">
+                                Đơn vị tiền tệ
+                            </div>
+                            <div class="cell-manage">
+                                Tình trạng
+                            </div>
+                        </div>
+                        <div class="row-manage">
+                            <div class="cell-manage" data-title="Số tài khoản">
+                                <%= banks.accountNumber %>
+                            </div>
+                            <div class="cell-manage" data-title="Ngày mở">
+                                22/07/2020
+                            </div>
+                            <div class="cell-manage" data-title="Số dư khả dụng">
+                                <%= banks.Money %>
+                            </div>
+                            <div class="cell-manage" data-title="Đơn vị tiền tệ">
+                                VND
+                            </div>
+                            <div class="cell-manage" data-title="Tình trạng">
+                                Mở
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="vendor2/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor2/animsition/js/animsition.min.js"></script>
+    <script src="vendor2/bootstrap/js/popper.js"></script>
+    <script src="vendor2/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor2/select2/select2.min.js"></script>
+    <script src="vendor2/daterangepicker/moment.min.js"></script>
+    <script src="vendor2/daterangepicker/daterangepicker.js"></script>
+    <script src="vendor2/countdowntime/countdowntime.js"></script>
+    <script src="js/vendor2.js"></script>
+    <%- include('footer'); -%>
