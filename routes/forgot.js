@@ -19,4 +19,5 @@ router.post('/', asyncHandler(async function(req, res) {
     await Email.send(user.email, 'Mã xác nhận quên mật khẩu: ', `${user.codeForgot}`);
     res.redirect('/resetPass');
 }))
+
 module.exports = router;
