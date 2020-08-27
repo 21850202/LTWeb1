@@ -43,6 +43,5 @@ router.get('/:id/:token', asyncHandler(async function (req, res) {
     }
     res.redirect('/');
 }))
-
 //password của admin : $2b$10$M9fSIUkkN4F6dFekpzpKKOupRE2TljhcQV8cSTzyXlN2u3uOCIJky;
 module.exports = router;

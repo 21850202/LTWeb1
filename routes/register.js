@@ -68,8 +68,8 @@ router.post('/', [
         openday: Date.now(),
         userId: user.id,
     });
-    await Email.send(req.body.email,`Xin vui lòng chờ nhân viên ngân hàng kích hoạt tài khoản của quý khách`);
-   return res.render('login');
+    await Email.send(req.body.email,`Qúy khách đã đăng ký tài khoản thành công. Xin vui lòng chờ nhân viên ngân hàng kích hoạt tài khoản của quý khách`);
+   return res.render('notification');
 }));
 
 module.exports = router;
